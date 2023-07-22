@@ -1,8 +1,8 @@
-package com.example.spring3security6websocket.model;
+package com.example.spring3security6websocket.dto;
 
 import java.time.LocalDateTime;
 
-public class ChatMessage {
+public class ChatMessageDto {
 
     private String sender;
 
@@ -12,11 +12,11 @@ public class ChatMessage {
 
     private LocalDateTime localDateTime;
 
-    public ChatMessage() {
+    public ChatMessageDto() {
         this.localDateTime = LocalDateTime.now();
     }
 
-    public ChatMessage(String sender, String receiver, String message) {
+    public ChatMessageDto(String sender, String receiver, String message) {
         this();
         this.sender = sender;
         this.receiver = receiver;
@@ -53,5 +53,15 @@ public class ChatMessage {
 
     public void setLocalDateTime(LocalDateTime localDateTime) {
         this.localDateTime = localDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "ChatMessageDto{" +
+                "sender='" + sender + '\'' +
+                ", receiver='" + receiver + '\'' +
+                ", message='" + message + '\'' +
+                ", localDateTime=" + localDateTime +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package com.example.spring3security6websocket.controller;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import com.example.spring3security6websocket.dto.UserDto;
-import com.example.spring3security6websocket.model.User;
+import com.example.spring3security6websocket.dao.entity.User;
 import com.example.spring3security6websocket.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

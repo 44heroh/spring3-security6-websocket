@@ -1,4 +1,4 @@
-package com.example.spring3security6websocket.model;
+package com.example.spring3security6websocket.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users", schema = "courses")
+@Table(name = "users", schema = "messages")
 public class User extends BaseEntity {
 
     @Column(name = "username")
@@ -35,14 +34,18 @@ public class User extends BaseEntity {
     @JoinTable(name = "user_roles",
     joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
     inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")},
-    schema = "courses"
+    schema = "messages"
     )
     private List<Role> roles;
 
     public User(String name, String email, String password, List<Role> roles) {
+        this.username = email;
         this.firstName = name;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.setCreated(new Date());
+        this.setUpdated(new Date());
+        this.setStatus(Status.ACTIVE);
     }
 }

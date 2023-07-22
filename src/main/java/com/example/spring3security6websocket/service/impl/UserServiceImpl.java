@@ -1,9 +1,9 @@
 package com.example.spring3security6websocket.service.impl;
 
 import com.example.spring3security6websocket.dto.UserDto;
-import com.example.spring3security6websocket.model.ERole;
-import com.example.spring3security6websocket.model.Role;
-import com.example.spring3security6websocket.model.User;
+import com.example.spring3security6websocket.dao.entity.ERole;
+import com.example.spring3security6websocket.dao.entity.Role;
+import com.example.spring3security6websocket.dao.entity.User;
 import com.example.spring3security6websocket.repository.RoleRepository;
 import com.example.spring3security6websocket.repository.UserRepository;
 import com.example.spring3security6websocket.service.UserService;

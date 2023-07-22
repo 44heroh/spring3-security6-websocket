@@ -1,10 +1,9 @@
 package com.example.spring3security6websocket.repository;
 
-import com.example.spring3security6websocket.dao.entity.Role;
+import com.example.spring3security6websocket.dao.entity.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
-    Role findByName(String name);
+public interface MessageRepository extends JpaRepository<Message, Long> {
 }

@@ -1,6 +1,6 @@
 package com.example.spring3security6websocket.security.service;
 
-import com.example.spring3security6websocket.model.User;
+import com.example.spring3security6websocket.dao.entity.User;
 import com.example.spring3security6websocket.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

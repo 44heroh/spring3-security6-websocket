@@ -1,4 +1,4 @@
-package com.example.spring3security6websocket.model;
+package com.example.spring3security6websocket.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

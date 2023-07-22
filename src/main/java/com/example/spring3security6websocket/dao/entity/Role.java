@@ -1,4 +1,4 @@
-package com.example.spring3security6websocket.model;
+package com.example.spring3security6websocket.dao.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "roles", schema = "courses")
+@Table(name = "roles", schema = "messages")
 @Data
 public class Role extends BaseEntity {
 

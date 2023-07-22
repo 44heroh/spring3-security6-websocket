@@ -1,0 +1,58 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="1.0.6" author="SobolevOE">
+        <createTable tableName="messages" schemaName="messages">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="created" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="text" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="sender" type="BIGINT">
+            </column>
+
+            <column name="receiver" type="BIGINT">
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.7" author="SobolevOE">
+        <addForeignKeyConstraint baseColumnNames="sender"
+                                 baseTableName="messages"
+                                 baseTableSchemaName="messages"
+                                 constraintName="fk_messages_sender_user"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"
+                                 referencedTableSchemaName="messages"
+        />
+    </changeSet>
+
+    <changeSet id="1.0.8" author="SobolevOE">
+        <addForeignKeyConstraint baseColumnNames="receiver"
+                                 baseTableName="messages"
+                                 baseTableSchemaName="messages"
+                                 constraintName="fk_messages_receiver_user"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"
+                                 referencedTableSchemaName="messages"
+        />
+    </changeSet>
+
+</databaseChangeLog>
